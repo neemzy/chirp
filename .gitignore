@@ -1,0 +1,5 @@
+/credentials.json
+/node_modules
+/public
+!public/app.css
+!public/index.html
