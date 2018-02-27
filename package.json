@@ -4,9 +4,18 @@
   "description": "Alternative, lightweight, plain and simple Twitter client",
   "author": "neemzy <tom.panier@free.fr>",
   "license": "UNLICENSED",
+  "watch": {
+    "build": {
+      "patterns": [
+        "app"
+      ],
+      "extensions": "js,vue"
+    }
+  },
   "scripts": {
     "server": "node server.js",
-    "build": "node_modules/browserify/bin/cmd.js -t babelify -t vueify -e app/app.js -o public/app.js",
+    "build": "browserify -t babelify -t vueify -e app/app.js -o public/app.js",
+    "watch": "npm-watch",
     "start": "npm run build && npm run server"
   },
   "dependencies": {
@@ -18,6 +27,7 @@
     "babel-preset-env": "^1.6.1",
     "babelify": "^8.0.0",
     "browserify": "^15.2.0",
+    "npm-watch": "^0.3.0",
     "vue": "^2.5.13",
     "vueify": "^9.4.1"
   }
